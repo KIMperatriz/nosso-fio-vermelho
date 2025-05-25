@@ -70,6 +70,7 @@ body {
 .carousel-track {
   display: flex;
   animation: slide 20s infinite linear;
+    width: max-content;
 }
 
 .carousel-track img {
