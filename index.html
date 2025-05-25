@@ -93,29 +93,67 @@
       – KIM
     </div>
 
-<div class="slider">
-  <div>
-    <img src="imagens/foto1.jpeg" alt="Foto 1" />
-  </div>
-  <div>
-    <img src="imagens/foto2.jpeg" alt="Foto 2" />
-  </div>
-  <div>
-    <img src="imagens/foto3.jpeg" alt="Foto 3" />
-  </div>
-</div>
 
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-  <script>
-    $(document).ready(function(){
-      $('.slider').slick({
-        autoplay: true,
-        autoplaySpeed: 3000,
-        arrows: false,
-        dots: true
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nosso Fio Vermelho</title>
+
+    <!-- fontes -->
+    <link href="https://fonts.googleapis.com/css2?family=Zeyada&display=swap" rel="stylesheet" />
+
+    <!-- slick css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+    />
+
+    <!-- seu css -->
+    <link rel="stylesheet" href="estilo.css" />
+  </head>
+  <body>
+    <header>
+      <h1>nosso fio vermelho</h1>
+    </header>
+
+    <!-- carrossel de imagens -->
+    <section class="galeria">
+      <div class="slider">
+        <div>
+          <img src="imagens/foto1.jpeg" alt="Foto 1" />
+        </div>
+        <div>
+          <img src="imagens/foto2.jpeg" alt="Foto 2" />
+        </div>
+        <div>
+          <img src="imagens/foto3.jpeg" alt="Foto 3" />
+        </div>
+      </div>
+    </section>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- slick js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+    <!-- script para iniciar o slick -->
+    <script>
+      $(document).ready(function () {
+        $('.slider').slick({
+          autoplay: true,
+          autoplaySpeed: 3000,
+          arrows: false,
+          dots: true,
+        });
       });
-    });
+    </script>
+  </body>
+</html>
 
     const contador = document.getElementById("contador");
     const dataInicial = new Date("2025-05-08T20:00:00");
