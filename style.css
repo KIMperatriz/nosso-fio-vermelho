@@ -1,4 +1,4 @@
-
+/* reset básico */
 body {
   margin: 0;
   padding: 0;
@@ -9,6 +9,7 @@ body {
   position: relative;
 }
 
+/* grade de fundo */
 .background-line {
   position: fixed;
   width: 100%;
@@ -19,7 +20,8 @@ body {
     #2b2b2b 1px,
     transparent 1px,
     transparent 20px
-  ), repeating-linear-gradient(
+  ),
+  repeating-linear-gradient(
     to bottom,
     #2b2b2b 0px,
     #2b2b2b 1px,
@@ -29,6 +31,7 @@ body {
   z-index: 0;
 }
 
+/* caixinha principal */
 .container {
   position: relative;
   z-index: 1;
@@ -41,59 +44,60 @@ body {
   box-shadow: 0 0 20px #ff4d4d44;
 }
 
+/* título */
 .title {
   font-size: 2em;
   color: #ff4d4d;
   text-align: center;
   margin-bottom: 10px;
+  font-family: 'Zeyada', cursive;
+  font-size: 3em;
 }
 
+/* contador */
 .counter {
-  font-size: 2em;
+  font-size: 1.5em;
   text-align: center;
   margin-bottom: 20px;
 }
 
+/* texto carinho */
 .text-box {
   margin: 20px 0;
   background-color: #1c1c1c;
   padding: 15px;
   border-radius: 10px;
   color: #ccc;
+  line-height: 1.6;
+  font-size: 1em;
+  text-align: justify;
 }
 
-.carousel {
-  overflow: hidden;
+/* slick slider base */
+.slider {
   margin-top: 20px;
 }
 
-.carousel-track {
-  display: flex;
-  animation: slide 20s infinite linear;
-    width: max-content;
-}
-
-.carousel-track img {
+/* estilizando imagens dentro do slick */
+.slider img {
   width: 80vw;
   max-width: 400px;
   height: 250px;
   object-fit: cover;
-  margin-right: 10px;
   border-radius: 10px;
-}
-
-@keyframes slide {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-100%); }
-}
-
-.slider {
-  width: 90%;
   margin: 0 auto;
 }
 
-.slider img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
+/* bolinhas do slick */
+.slick-dots li button:before {
+  color: #ff4d4d;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #fff;
+}
+
+/* esconder setas do slick (você pode ativar se quiser depois) */
+.slick-arrow {
+  display: none !important;
 }
