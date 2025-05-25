@@ -2,32 +2,54 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Te esperando...</title>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
 
   <style>
     body {
       margin: 0;
-      background-color: #0d0d0d;
-      background-image: url('imagens/maos_fio_vermelho.png');
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: 300px;
+      padding: 0;
+      background-color: #0e0e0e;
+      font-family: 'Courier New', Courier, monospace;
       color: #fff;
-      font-family: 'Segoe UI', sans-serif;
       overflow-x: hidden;
+      position: relative;
     }
 
-    @keyframes moverFio {
-      0% { transform: translate(0, 0); }
-      100% { transform: translate(-300px, -300px); }
+    .background-line {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        to right,
+        #2b2b2b 0px,
+        #2b2b2b 1px,
+        transparent 1px,
+        transparent 20px
+      ), repeating-linear-gradient(
+        to bottom,
+        #2b2b2b 0px,
+        #2b2b2b 1px,
+        transparent 1px,
+        transparent 20px
+      );
+      z-index: 0;
     }
 
     .container {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      margin: 100px auto;
+      padding: 20px;
+      background: rgba(20, 20, 20, 0.7);
+      border: 1px solid #ff4d4d;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #ff4d4d44;
       text-align: center;
-      padding: 100px 20px;
     }
 
     h1 {
@@ -45,25 +67,52 @@
 
     .texto {
       max-width: 600px;
-      margin: auto;
+      margin: 0 auto 3rem;
       font-size: 1.1rem;
       color: #ddd;
+      line-height: 1.5;
+      white-space: pre-wrap;
     }
 
-    .galeria {
-      margin: 3rem auto;
-      max-width: 90vw;
+    .carousel {
+      overflow: hidden;
+      margin-top: 20px;
     }
 
-    .galeria img {
-      height: 200px;
+    .carousel-track {
+      display: flex;
+      animation: slide 20s infinite linear;
+      width: max-content;
+    }
+
+    .carousel-track img {
+      width: 80vw;
+      max-width: 400px;
+      height: 250px;
+      object-fit: cover;
+      margin-right: 10px;
       border-radius: 10px;
+    }
+
+    @keyframes slide {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+
+    .slider {
+      width: 90%;
       margin: 0 auto;
+    }
+
+    .slider img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
     }
   </style>
 </head>
 <body>
-  <div class="fio-vermelho"></div>
+  <div class="background-line"></div>
   <div class="container">
     <h1>te esperando há</h1>
     <div id="contador">carregando...</div>
@@ -72,20 +121,16 @@
       os dias passam, e com cada um deles eu aprendo a me refazer.
       não tô parada, nem congelada no tempo — tô me cuidando, me entendendo, me transformando.
       e mesmo assim, continuo segurando com carinho o nosso fio vermelho, esse que me liga a ti com ternura, mesmo na ausência.
-      
 
       não sei quando, nem se. mas enquanto a resposta não chega, eu sigo com esperança.
       faço do meu quarto um lugar de paz, do meu coração uma casa arrumadinha, e das minhas orações um lembrete: que Deus nunca solta a mão de quem ama com verdade.
-      
 
       não espero por capricho, nem por orgulho — eu espero porque acredito.
       e mesmo se tu não souber, ou fingir que esqueceu, eu sigo firme. porque amar também é isso: segurar um fio invisível e confiar que ele ainda pode te guiar de volta pra casa.
-      
 
       então hoje, como todos os dias, eu escolho ficar aqui.
       não presa ao passado, mas em paz com tudo que vivi.
       segurando tua parte com cuidado, e a mão de Deus com fé.
-      
 
       e se um dia tu voltar… vai ver que eu tava aqui.
       não perfeita, mas cheia de amor.
@@ -93,85 +138,49 @@
       – KIM
     </div>
 
-
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nosso Fio Vermelho</title>
-
-    <!-- fontes -->
-    <link href="https://fonts.googleapis.com/css2?family=Zeyada&display=swap" rel="stylesheet" />
-
-    <!-- slick css -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
-    />
-
-    <!-- seu css -->
-    <link rel="stylesheet" href="estilo.css" />
-  </head>
-  <body>
-    <header>
-      <h1>nosso fio vermelho</h1>
-    </header>
-
-    <!-- carrossel de imagens -->
-    <section class="galeria">
-      <div class="slider">
-        <div>
-          <img src="imagens/foto1.jpeg" alt="Foto 1" />
-        </div>
-        <div>
-          <img src="imagens/foto2.jpeg" alt="Foto 2" />
-        </div>
-        <div>
-          <img src="imagens/foto3.jpeg" alt="Foto 3" />
-        </div>
+    <div class="carousel">
+      <div class="carousel-track slider">
+        <img src="imagens/foto1.jpeg" alt="Foto 1" />
+        <img src="imagens/foto2.jpeg" alt="Foto 2" />
+        <img src="imagens/foto3.jpeg" alt="Foto 3" />
       </div>
-    </section>
+    </div>
+  </div>
 
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script>
+    const startDate = new Date("2024-12-30");
+    const counter = document.getElementById("contador");
 
-    <!-- slick js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-
-    <!-- script para iniciar o slick -->
-    <script>
-      $(document).ready(function () {
-        $('.slider').slick({
-          autoplay: true,
-          autoplaySpeed: 3000,
-          arrows: false,
-          dots: true,
-        });
-      });
-    </script>
-  </body>
-</html>
-
-    const contador = document.getElementById("contador");
-    const dataInicial = new Date("2025-05-08T20:00:00");
-
-    function atualizarContador() {
-      const agora = new Date();
-      const diff = agora - dataInicial;
-
-      const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const horas = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const minutos = Math.floor((diff / (1000 * 60)) % 60);
-      const segundos = Math.floor((diff / 1000) % 60);
-
-      contador.textContent = `${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos`;
+    function updateCounter() {
+      const now = new Date();
+      const diffTime = Math.abs(now - startDate);
+      const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+      counter.innerText = diffDays + " dias";
     }
 
-    setInterval(atualizarContador, 1000);
-    atualizarContador();
+    updateCounter();
+    setInterval(updateCounter, 1000);
+
+    $(document).ready(function(){
+      $('.slider').slick({
+        autoplay: true,
+        autoplaySpeed: 3000,
+        arrows: false,
+        dots: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        responsive: [
+          {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: 1
+            }
+          }
+        ]
+      });
+    });
   </script>
 </body>
 </html>
