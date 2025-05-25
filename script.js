@@ -1,7 +1,5 @@
-
-// Define a data do início da espera
 const startDate = new Date("2024-12-30");
-const counter = document.getElementById("counter");
+const counter = document.getElementById("contador");
 
 function updateCounter() {
   const now = new Date();
@@ -11,6 +9,7 @@ function updateCounter() {
 }
 
 updateCounter();
+setInterval(updateCounter, 1000);
 
 $('.slider').slick({
   autoplay: true,
