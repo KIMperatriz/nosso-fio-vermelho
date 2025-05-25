@@ -11,3 +11,18 @@ function updateCounter() {
 }
 
 updateCounter();
+
+$('.slider').slick({
+  autoplay: true,
+  autoplaySpeed: 3000,
+  arrows: false,
+  dots: true,
+  responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 1
+      }
+    }
+  ]
+});
