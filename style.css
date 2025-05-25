@@ -87,3 +87,13 @@ body {
   100% { transform: translateX(-100%); }
 }
 
+.slider {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.slider img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
